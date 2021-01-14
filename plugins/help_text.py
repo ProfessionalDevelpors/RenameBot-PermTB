@@ -30,7 +30,6 @@ def help_user(bot, update):
     bot.send_message(
         chat_id=update.chat.id,
         text=script.HELP_USER,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="⭕️ Contact DEV ⭕️", url="https://t.me/prgofficial")]]),
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
@@ -72,12 +71,11 @@ async def rename_cb(bot, update):
     except:
         filename = "Not Available"
     ischatmem = update.from_user.id
-    
-    if Config.CHANNEL is Not None:
-      try:
-         ischatmem = update._client.get_chat_member(Config.CHANNEL,ischatmem)
-      except:
-        return await update.reply_text(Config.CTEXT)
+    try:
+      await update._client.get_chat_member('STUDYMANIACHANNEL',ischatmem)
+    except:
+      return await update.reply_text('**You must Join the Below Channel to use me !**',
+                                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (text="Join Channel",url="t.me/Studymaniachannel")]]))
     await bot.send_message(
         chat_id=update.chat.id,
         text="<b>File Name</b> : <code>{}</code> \n\nSelect the desired option below 😇".format(filename),
