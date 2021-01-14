@@ -71,7 +71,13 @@ async def rename_cb(bot, update):
         filename = file.file_name
     except:
         filename = "Not Available"
+    ischatmem = update.from_user.id
     
+    if Config.CHANNEL is Not None:
+      try:
+         ischatmem = update._client.get_chat_member(Config.CHANNEL,ischatmem)
+      except:
+        return await update.reply_text(Config.CTEXT)
     await bot.send_message(
         chat_id=update.chat.id,
         text="<b>File Name</b> : <code>{}</code> \n\nSelect the desired option below 😇".format(filename),
