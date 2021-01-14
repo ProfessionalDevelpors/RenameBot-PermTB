@@ -15,6 +15,10 @@ class Config(object):
 
     # Ban Unwanted Members..
     BANNED_USERS = []
+    
+    # For Must Channel Join
+    CHANNEL = os.environ.get('CHANNEL')
+    CTEXT = str(os.environ.get('CTEXT')
 
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = "./DOWNLOADS"
@@ -27,4 +31,3 @@ class Config(object):
 
     # Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
-
