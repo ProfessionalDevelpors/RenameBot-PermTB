@@ -48,7 +48,10 @@ async def cus_name(bot, message):
 
     
 async def rename_doc(bot, message):
-    
+    try:
+      await message._client.get_chat_member('STUDYMANIACHANNEL', message.from_user.id)
+    except:
+      return await message.reply_text('You Must Join the @StudyManiaChannel to Use me !")
     mssg = await bot.get_messages(
         message.chat.id,
         message.reply_to_message.message_id
