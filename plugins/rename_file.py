@@ -51,7 +51,7 @@ async def rename_doc(bot, message):
     try:
       await message._client.get_chat_member('STUDYMANIACHANNEL', message.from_user.id)
     except:
-      return await message.reply_text('You Must Join the @StudyManiaChannel to Use me !")
+      return await message.reply_text("You Must Join the @StudyManiaChannel to Use me !")
     mssg = await bot.get_messages(
         message.chat.id,
         message.reply_to_message.message_id
@@ -164,15 +164,14 @@ async def rename_doc(bot, message):
                 pass  
 
             await bot.edit_message_text(
-                text=script.AFTER_SUCCESSFUL_UPLOAD_MSG,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🙌🏻 SHARE ME 🙌🏻", url="tg://msg?text=Hai%20Friend%20%E2%9D%A4%EF%B8%8F%2C%0AToday%20i%20just%20found%20out%20an%20intresting%20and%20Powerful%20%2A%2ARename%20Bot%2A%2A%20for%20Free%F0%9F%A5%B0.%20%0A%2A%2ABot%20Link%20%3A%2A%2A%20%40TroJanzRenamer%20%F0%9F%94%A5")]]),
+                text="Thanks for Using me\n@StudyManiaChannel",
                 chat_id=message.chat.id,
                 message_id=a.message_id,
                 disable_web_page_preview=True
             )
             
     else:
-        await bot.send_message(
+        await bot.s
             chat_id=message.chat.id,
             text="You're B A N N E D",
             reply_to_message_id=message.message_id
