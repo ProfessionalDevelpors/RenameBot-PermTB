@@ -28,3 +28,4 @@ class Config(object):
     # Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
     CTEXT = os.environ.get('CTEXT')
+    CHANNEL = os.environ.get('CHANNEL')
