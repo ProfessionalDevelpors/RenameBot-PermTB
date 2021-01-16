@@ -49,7 +49,7 @@ async def cus_name(bot, message):
     
 async def rename_doc(bot, message):
     try:
-      await message._client.get_chat_member('STUDYMANIACHANNEL', message.from_user.id)
+      await message._client.get_chat_member(Config.CHANNEL, message.from_user.id)
     except:
       return await message.reply_text(Config.CTEXT,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (text="📝 RENAME 📝",callback_data="rename_button")]]))
     mssg = await bot.get_messages(
@@ -164,7 +164,7 @@ async def rename_doc(bot, message):
                 pass  
 
             await bot.edit_message_text(
-                text="Thanks for Using me\n@StudyManiaChannel",
+                text=f"Thanks for Using me\n@{Config.CHANNEL}",
                 chat_id=message.chat.id,
                 message_id=a.message_id,
                 disable_web_page_preview=True
