@@ -74,7 +74,7 @@ async def rename_cb(bot, update):
     try:
       await update._client.get_chat_member('STUDYMANIACHANNEL',ischatmem)
     except:
-      return await update.reply_text('**You must Join the Below Channel to use me !**',
+      return await update.reply_text(Config.CTEXT,
                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (text="Join Channel",url="t.me/Studymaniachannel")]]))
     await bot.send_message(
         chat_id=update.chat.id,
