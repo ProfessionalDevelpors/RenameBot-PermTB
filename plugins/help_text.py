@@ -72,10 +72,10 @@ async def rename_cb(bot, update):
         filename = "Not Available"
     ischatmem = update.from_user.id
     try:
-      await update._client.get_chat_member('STUDYMANIACHANNEL',ischatmem)
+      await update._client.get_chat_member(Config.CHANNEL,ischatmem)
     except:
       return await update.reply_text(Config.CTEXT,
-                                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (text="Join Channel",url="t.me/Studymaniachannel")]]))
+                                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton (text="Join Channel",url=f"t.me/{Config.CHANNEL")]]))
     await bot.send_message(
         chat_id=update.chat.id,
         text="<b>File Name</b> : <code>{}</code> \n\nSelect the desired option below 😇".format(filename),
