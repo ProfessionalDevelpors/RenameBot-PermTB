@@ -29,3 +29,4 @@ if __name__ == "__main__" :
     )
     Config.AUTH_USERS.add(680815375)
     app.run()
+    print('Bot Started !!')
